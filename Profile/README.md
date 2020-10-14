@@ -3,7 +3,7 @@
 Flutter UI Challenge - Profile Page
 
 ## Screenshot
-<img src = "Screenshot\ProfilePage.jpg" height="300em">
+<img src = "Screenshot\ProfilePage.jpg" height="100%">
 
 ## Getting Started
 
