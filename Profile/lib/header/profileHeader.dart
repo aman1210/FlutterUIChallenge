@@ -16,8 +16,11 @@ class ProfileHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [const Color(0xFF7928D1), const Color(0xFF9A4DFF)],
-          stops: [0.3, 0.5],
+          colors: [
+            const Color.fromRGBO(114, 30, 224, 1),
+            const Color.fromRGBO(160, 46, 185, 1),
+          ],
+          stops: [0.5, 0.9],
         ),
       ),
     );
@@ -35,8 +38,8 @@ class ProfileHeader extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 1),
-            blurRadius: 4,
-            spreadRadius: 2,
+            blurRadius: 10,
+            spreadRadius: 4,
             color: Colors.black38,
           )
         ],

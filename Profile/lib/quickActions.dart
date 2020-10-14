@@ -68,6 +68,7 @@ class QuickACtions extends StatelessWidget {
   Card buildCard({LinearGradient gradient, String image, String name}) {
     return Card(
       elevation: 5,
+      shadowColor: gradient.colors[1],
       margin: const EdgeInsets.symmetric(horizontal: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: GestureDetector(

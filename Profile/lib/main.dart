@@ -27,7 +27,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        children: [ProfileHeader(), QuickACtions(), Options()],
+        children: [
+          ProfileHeader(),
+          QuickACtions(),
+          Options(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
