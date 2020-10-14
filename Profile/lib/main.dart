@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:uiChallengeProfile/header/profileHeader.dart';
+import 'package:uiChallengeProfile/options.dart';
 import 'package:uiChallengeProfile/quickActions.dart';
 
 void main() {
@@ -24,13 +25,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ProfileHeader(),
-            QuickACtions(),
-          ],
-        ),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [ProfileHeader(), QuickACtions(), Options()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [

@@ -41,7 +41,7 @@ class QuickACtions extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           padding:
-              const EdgeInsets.only(left: 20, bottom: 20, top: 10, right: 10),
+              const EdgeInsets.only(left: 10, bottom: 20, top: 10, right: 10),
           scrollDirection: Axis.horizontal,
           children: [
             buildCard(
