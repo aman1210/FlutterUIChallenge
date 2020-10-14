@@ -24,11 +24,13 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ProfileHeader(),
-          QuickACtions(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ProfileHeader(),
+            QuickACtions(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
