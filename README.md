@@ -1,7 +1,7 @@
 # Flutter UI Challenges
 
 ## Profile Page UI
-<img src="Profile\Screenshot\ProfilePage.jpg" height="500em">
+<img src="Profile\Screenshot\ProfilePage.jpg" height="500px">
 
 ## Animations
-![Bottom_Reveal_Demo](BottomRevealClone/demo.gif)
+<img src="BottomRevealClone\demo.gif" height="500px">
