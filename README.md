@@ -4,4 +4,4 @@
 <img src="Profile\Screenshot\ProfilePage.jpg" height="500em">
 
 ## Animations
-![Bottom_Reveal_Demo](BottomRevealCLone/demo.gif)
+![Bottom_Reveal_Demo](BottomRevealClone/demo.gif)
