@@ -1,14 +1,14 @@
 # Flutter UI Challenges
 
-## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/BottomRevealClone'>Profile Page UI</a>
+## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/Profile'>Profile Page UI</a>
 
 <img src="Profile\Screenshot\ProfilePage.jpg" height="400px">
 
-## Animations
+## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/BottomRevealClone'>Animations</a>
 
 <img src="BottomRevealClone\demo.gif" height="400px">
 
-## Shoes Store UI
+## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
 <img height="400px" src="ShoesStore/Screenshots/6.gif">&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="400px" src="ShoesStore/Screenshots/1.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
