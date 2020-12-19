@@ -4,9 +4,10 @@
 
 <img src="Profile\Screenshot\ProfilePage.jpg" height="400px">
 
-## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/BottomRevealClone'>Animations</a>
+## Animations
 
-<img src="BottomRevealClone\demo.gif" height="400px">
+<img src="BottomRevealClone\demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="FlipCard/screen.gif" height="400px">
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
