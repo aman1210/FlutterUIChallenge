@@ -61,24 +61,28 @@ class _RotatingAppDrawerState extends State<RotatingAppDrawer>
                 Transform.translate(
                   offset: Offset(maxDrag * (controller.value - 1), 0),
                   child: Transform(
-                      transform: Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(pi / 2 * (1 - controller.value)),
-                      child: SafeArea(child: MyDrawer())),
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.001)
+                      ..rotateY(pi / 2 * (1 - controller.value)),
+                    alignment: Alignment.centerRight,
+                    child: MyDrawer(),
+                  ),
                 ),
                 Transform.translate(
                   offset: Offset(maxDrag * controller.value, 0),
                   child: Transform(
                     transform: Matrix4.identity()
                       ..setEntry(3, 2, 0.002)
-                      ..rotateY(-pi * controller.value / 2),
-                    child: MyHomePage(),
+                      ..rotateY(-pi * controller.value / 2.00),
+                    child: Container(
+                      color: Colors.blue,
+                    ),
                   ),
                 ),
                 Positioned(
                   child: Container(
-                    padding: const EdgeInsets.only(left: 20),
-                    height: 60,
+                    padding: const EdgeInsets.only(left: 20, top: 30),
+                    height: 90,
                     child: Icon(
                       Icons.menu,
                       color: Colors.white,
@@ -87,15 +91,23 @@ class _RotatingAppDrawerState extends State<RotatingAppDrawer>
                     color: Theme.of(context).primaryColor,
                     alignment: Alignment.centerLeft,
                   ),
-                  top: mediaQuery.padding.top,
-                  // width:mediaQuery.size.width ,
                   left: maxDrag * controller.value,
                 ),
                 Positioned(
-                  child: Text("Hello World!"),
-                  top: mediaQuery.size.height / 2,
-                  left: (maxDrag * controller.value) +
-                      (mediaQuery.size.width / 2 - 40),
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 20, top: 30),
+                    height: 90,
+                    child: Text(
+                      '3D AppDrawer',
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    alignment: Alignment.center,
+                  ),
+                  left: maxDrag * controller.value +
+                      (mediaQuery.size.width / 2 - 90),
                 ),
               ],
             );
@@ -117,51 +129,14 @@ class MyDrawer extends StatelessWidget {
         child: SafeArea(
           child: Theme(
             data: ThemeData(brightness: Brightness.dark),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                ListTile(
-                  leading: Icon(Icons.new_releases),
-                  title: Text('News'),
-                ),
-                ListTile(
-                  leading: Icon(Icons.star),
-                  title: Text('Favourites'),
-                ),
-                ListTile(
-                  leading: Icon(Icons.map),
-                  title: Text('Map'),
-                ),
-                ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Settings'),
-                ),
-                ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text('Profile'),
-                ),
-              ],
+            child: ListView.builder(
+              itemBuilder: (context, index) => ListTile(
+                title: Text('Option ${index + 1}'),
+                leading: Icon(Icons.celebration),
+              ),
+              itemCount: 10,
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Text('Change AppBar Animation'),
-          ],
         ),
       ),
     );
