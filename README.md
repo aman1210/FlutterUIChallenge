@@ -7,7 +7,8 @@
 ## Animations
 
 <img src="BottomRevealClone\demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="FlipCard/screen.gif" height="400px">
+<img src="FlipCard/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="3DAppBar/screen.gif" height="400px">
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
