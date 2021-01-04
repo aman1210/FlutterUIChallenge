@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var currentImage = 'assets/images/varanasi1.jpg';
+  var currentCountry = 0;
 
   List<String> images = [
     'assets/images/varanasi1.jpg',
@@ -51,14 +52,27 @@ class _HomePageState extends State<HomePage> {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return buildCountry(countries[index]);
+                    return Column(
+                      children: [
+                        currentCountry == index
+                            ? Icon(
+                                CupertinoIcons.arrow_down,
+                                size: 16,
+                                color: Colors.white,
+                              )
+                            : SizedBox(
+                                height: 16,
+                              ),
+                        buildCountry(countries[index]),
+                      ],
+                    );
                   },
                   itemCount: countries.length,
                 ),
               ),
               CarouselSlider.builder(
                 options: CarouselOptions(
-                  aspectRatio: 9 / 16,
+                  aspectRatio: 3 / 4,
                   height: 500,
                   viewportFraction: 0.8,
                   pageSnapping: true,
@@ -66,6 +80,7 @@ class _HomePageState extends State<HomePage> {
                   onPageChanged: (index, reason) {
                     setState(() {
                       currentImage = images[index];
+                      currentCountry = index;
                     });
                   },
                 ),
@@ -76,20 +91,21 @@ class _HomePageState extends State<HomePage> {
                     margin: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 10),
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            images[index],
-                          ),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          images[index],
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 8,
-                            color: Colors.black38,
-                            offset: Offset(4, 4),
-                          ),
-                        ]),
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 8,
+                          color: Colors.black38,
+                          offset: Offset(4, 4),
+                        ),
+                      ],
+                    ),
                   );
                 },
               ),
