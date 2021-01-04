@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:travel_app/widgets/background.dart';
+import 'package:travel_app/widgets/homescreenAppBar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,6 +22,14 @@ class _HomePageState extends State<HomePage> {
     'assets/images/varanasi4.jpg',
     'assets/images/varanasi5.jpg',
   ];
+
+  List<String> countries = [
+    "India",
+    "Sweden",
+    "Italy",
+    "Ireland",
+    "Vietnam",
+  ];
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -33,41 +42,18 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             children: [
+              HomeScreenAppBar(),
               Container(
-                margin: const EdgeInsets.only(top: 60, left: 20, right: 20),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.only(left: 16),
+                width: size.width,
                 height: 65,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.menu,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/icon.png',
-                          height: 30,
-                        ),
-                        Text(
-                          'travello',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontFamily: 'Poppins'),
-                        )
-                      ],
-                    ),
-                    Icon(
-                      CupertinoIcons.search,
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                  ],
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return buildCountry(countries[index]);
+                  },
+                  itemCount: countries.length,
                 ),
               ),
               CarouselSlider.builder(
@@ -110,6 +96,17 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Padding buildCountry(String name) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Text(
+        name,
+        style:
+            TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Poppins'),
       ),
     );
   }
