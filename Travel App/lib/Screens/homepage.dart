@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       places: [
         new PlaceDetail(
           placeName: 'Varanasi',
-          img: 'assets/images/varanasi1.jpg',
+          img: 'assets/images/varanasi2.jpg',
           desc:
               'is a city in the northern Indian state of Uttar Pradesh dating to the 11th century B.C. Regarded as the spiritual capital of India',
           detail:
