@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Screens/placeDetail.dart';
-import '../Screens/homepage.dart';
+import '../../Screens/homepage.dart';
 
 class ImageCard extends StatelessWidget {
   const ImageCard({Key key, @required this.size, @required this.placeDetail})

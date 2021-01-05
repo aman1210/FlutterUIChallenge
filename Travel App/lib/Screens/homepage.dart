@@ -1,15 +1,14 @@
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'package:travel_app/widgets/background.dart';
+import 'package:travel_app/widgets/homepage/background.dart';
 import 'package:travel_app/widgets/fadeAndSlideAnimation.dart';
-import 'package:travel_app/widgets/homescreenAppBar.dart';
-import 'package:travel_app/widgets/imageCard.dart';
-import 'package:travel_app/widgets/placeCounter.dart';
+import 'package:travel_app/widgets/homepage/homescreenAppBar.dart';
+import 'package:travel_app/widgets/homepage/imageCard.dart';
+import 'package:travel_app/widgets/homepage/placeCounter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                 "Mumbai (formerly called Bombay) is a densely populated city on India’s west coast. A financial center, it's India's largest city.",
             img: 'assets/images/mumbai.jpg',
             detail:
-                "Mumbai (Marathi: मुंबई) [35], a cosmopolitan metropolis, earlier known as Bombay, is the largest city in India and the capital of Maharashtra state. Mumbai was originally a conglomeration of seven islands on the Konkan coastline which over time were joined to form the island city of Bombay. The island was in turn joined with the neighboring island of Salsette to form Greater Bombay. The city has an estimated metropolitan population of 21 million (2005), making it one of the world's most populous cities.\nMumbai is undoubtedly the commercial capital of India and is one of the predominant port cities in the country. Mumbai's nature as the most eclectic and cosmopolitan Indian city is symbolized in the presence of Bollywood within the city, the centre of the globally-influential Hindi film and TV industries. It is also home to India's largest slum population.")
+                "Mumbai (Marathi: मुंबई), a cosmopolitan metropolis, earlier known as Bombay, is the largest city in India and the capital of Maharashtra state. Mumbai was originally a conglomeration of seven islands on the Konkan coastline which over time were joined to form the island city of Bombay. The island was in turn joined with the neighboring island of Salsette to form Greater Bombay. The city has an estimated metropolitan population of 21 million (2005), making it one of the world's most populous cities.\nMumbai is undoubtedly the commercial capital of India and is one of the predominant port cities in the country. Mumbai's nature as the most eclectic and cosmopolitan Indian city is symbolized in the presence of Bollywood within the city, the centre of the globally-influential Hindi film and TV industries. It is also home to India's largest slum population.")
       ],
     ),
     new CountryDetail(
@@ -82,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                 options: CarouselOptions(
                   enableInfiniteScroll: false,
                   aspectRatio: 3 / 4,
-                  height: 500,
+                  height: 520,
                   viewportFraction: 0.8,
                   pageSnapping: true,
                   enlargeCenterPage: true,
@@ -129,7 +128,9 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         countriesList[currentCountry].places[index].placeName,
                         style: TextStyle(
-                            color: Colors.white,
+                            color: index == currentIndex
+                                ? Colors.white
+                                : Colors.white54,
                             fontSize: 12,
                             fontFamily: 'Poppins'),
                       ),
@@ -178,6 +179,7 @@ class _HomePageState extends State<HomePage> {
       onTap: () {
         setState(() {
           currentCountry = index;
+          currentIndex = 0;
         });
       },
       splashColor: Colors.white,
@@ -186,7 +188,9 @@ class _HomePageState extends State<HomePage> {
         child: Text(
           name,
           style: TextStyle(
-              fontSize: 16, color: Colors.white, fontFamily: 'Poppins'),
+              fontSize: 16,
+              color: index == currentCountry ? Colors.white : Colors.white54,
+              fontFamily: 'Poppins'),
         ),
       ),
     );
