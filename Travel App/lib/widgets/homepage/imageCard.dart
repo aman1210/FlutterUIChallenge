@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Screens/placeDetail.dart';
-import '../../Screens/homepage.dart';
+import '../../data.dart';
 
 class ImageCard extends StatelessWidget {
   const ImageCard({Key key, @required this.size, @required this.placeDetail})
@@ -75,6 +75,8 @@ class ImageCard extends StatelessWidget {
                   type: MaterialType.transparency,
                   child: Text(
                     placeDetail.desc,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         color: Colors.white70,
                         fontFamily: 'Poppins',

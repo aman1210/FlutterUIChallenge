@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/fadeAndSlideAnimation.dart';
 import 'package:travel_app/widgets/placedetailscreen/appBar.dart';
 
-import './homepage.dart';
+import '../data.dart';
 
 class PlaceDetailScreen extends StatefulWidget {
   PlaceDetailScreen(this.placeDetail, this.size);
@@ -72,7 +72,6 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                 child: FadeAnimation(
                   1.3,
                   ListView(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Welcome To ${widget.placeDetail.placeName}',
