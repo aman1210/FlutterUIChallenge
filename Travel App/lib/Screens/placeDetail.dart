@@ -45,12 +45,42 @@ class PlaceDetailScreen extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
+                padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
                 alignment: Alignment.bottomCenter,
                 height: size.height - 360,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(40)),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: FadeAnimation(
+                  1.3,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Welcome To ${placeDetail.placeName}',
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            letterSpacing: -1),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        placeDetail.detail,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            color: Colors.black54),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
