@@ -1,11 +1,12 @@
 import 'dart:ui';
 
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:travel_app/widgets/background.dart';
 import 'package:travel_app/widgets/homescreenAppBar.dart';
+import 'package:travel_app/widgets/imageCard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,34 +45,10 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: [
               HomeScreenAppBar(),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                margin: const EdgeInsets.only(left: 16),
-                width: size.width,
-                height: 65,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        currentCountry == index
-                            ? Icon(
-                                CupertinoIcons.arrow_down,
-                                size: 16,
-                                color: Colors.white,
-                              )
-                            : SizedBox(
-                                height: 16,
-                              ),
-                        buildCountry(countries[index]),
-                      ],
-                    );
-                  },
-                  itemCount: countries.length,
-                ),
-              ),
+              countryList(size),
               CarouselSlider.builder(
                 options: CarouselOptions(
+                  enableInfiniteScroll: false,
                   aspectRatio: 3 / 4,
                   height: 500,
                   viewportFraction: 0.8,
@@ -80,33 +57,12 @@ class _HomePageState extends State<HomePage> {
                   onPageChanged: (index, reason) {
                     setState(() {
                       currentImage = images[index];
-                      currentCountry = index;
                     });
                   },
                 ),
                 itemCount: images.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          images[index],
-                        ),
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 8,
-                          color: Colors.black38,
-                          offset: Offset(4, 4),
-                        ),
-                      ],
-                    ),
-                  );
+                  return ImageCard(size: size, image: images[index]);
                 },
               ),
             ],
@@ -116,13 +72,49 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Padding buildCountry(String name) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Text(
-        name,
-        style:
-            TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Poppins'),
+  Container countryList(Size size) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.only(left: 16),
+      width: size.width,
+      height: 65,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              currentCountry == index
+                  ? Icon(
+                      CupertinoIcons.arrow_down,
+                      size: 16,
+                      color: Colors.white,
+                    )
+                  : SizedBox(
+                      height: 16,
+                    ),
+              buildCountry(countries[index], index),
+            ],
+          );
+        },
+        itemCount: countries.length,
+      ),
+    );
+  }
+
+  InkWell buildCountry(String name, int index) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          currentCountry = index;
+        });
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Text(
+          name,
+          style: TextStyle(
+              fontSize: 16, color: Colors.white, fontFamily: 'Poppins'),
+        ),
       ),
     );
   }
