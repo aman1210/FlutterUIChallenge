@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:travel_app/widgets/background.dart';
 import 'package:travel_app/widgets/homescreenAppBar.dart';
 import 'package:travel_app/widgets/imageCard.dart';
+import 'package:travel_app/widgets/placeCounter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var currentImage = 'assets/images/varanasi1.jpg';
+  var currentIndex = 0;
   var currentCountry = 0;
 
   List<String> images = [
@@ -57,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                   onPageChanged: (index, reason) {
                     setState(() {
                       currentImage = images[index];
+                      currentIndex = index;
                     });
                   },
                 ),
@@ -65,6 +69,37 @@ class _HomePageState extends State<HomePage> {
                   return ImageCard(size: size, image: images[index]);
                 },
               ),
+              SizedBox(
+                height: 20,
+              ),
+              PlaceCounter(currentIndex: currentIndex),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 34),
+                width: size.width,
+                height: 3,
+                color: Colors.white30,
+              ),
+              Container(
+                height: 60,
+                width: size.width - 34,
+                margin: const EdgeInsets.only(left: 26, top: 8),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) => InkWell(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: Text(
+                        'Varanasi',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontFamily: 'Poppins'),
+                      ),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ],
