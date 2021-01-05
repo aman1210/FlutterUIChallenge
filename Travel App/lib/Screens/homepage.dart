@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:travel_app/widgets/background.dart';
+import 'package:travel_app/widgets/fadeAndSlideAnimation.dart';
 import 'package:travel_app/widgets/homescreenAppBar.dart';
 import 'package:travel_app/widgets/imageCard.dart';
 import 'package:travel_app/widgets/placeCounter.dart';
@@ -93,9 +94,13 @@ class _HomePageState extends State<HomePage> {
                 ),
                 itemCount: countriesList[currentCountry].places.length,
                 itemBuilder: (context, index) {
-                  return ImageCard(
-                      size: size,
-                      placeDetail: countriesList[currentCountry].places[index]);
+                  return FadeAnimation(
+                    (1 + 0.5 * index),
+                    ImageCard(
+                        size: size,
+                        placeDetail:
+                            countriesList[currentCountry].places[index]),
+                  );
                 },
               ),
               SizedBox(

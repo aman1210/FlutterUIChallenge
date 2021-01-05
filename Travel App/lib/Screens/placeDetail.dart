@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/widgets/fadeAndSlideAnimation.dart';
 
 import './homepage.dart';
 
@@ -39,32 +40,39 @@ class PlaceDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
+          FadeAnimation(
+            1,
+            Align(
               alignment: Alignment.bottomCenter,
-              height: size.height - 360,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(40)),
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                height: size.height - 360,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40)),
+              ),
             ),
           ),
           Positioned(
             top: 330,
             left: size.width / 2 - 30,
-            child: Container(
-              height: 60,
-              width: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [BoxShadow(blurRadius: 16, color: Colors.black26)],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                  size: 30,
+            child: FadeAnimation(
+              1.2,
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(blurRadius: 16, color: Colors.black26)],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 30,
+                  ),
                 ),
               ),
             ),
