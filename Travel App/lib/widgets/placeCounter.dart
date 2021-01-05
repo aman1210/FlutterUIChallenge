@@ -6,9 +6,11 @@ class PlaceCounter extends StatelessWidget {
   const PlaceCounter({
     Key key,
     @required this.currentIndex,
+    @required this.length,
   }) : super(key: key);
 
   final int currentIndex;
+  final int length;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class PlaceCounter extends StatelessWidget {
                     fontSize: 28, color: Colors.white, fontFamily: 'Poppins'),
               ),
               Text(
-                '/10',
+                '/0$length',
                 style: TextStyle(
                     fontSize: 12, color: Colors.white60, fontFamily: 'Poppins'),
               ),

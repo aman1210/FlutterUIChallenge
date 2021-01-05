@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import '../Screens/homepage.dart';
 
 class ImageCard extends StatelessWidget {
-  const ImageCard({
-    Key key,
-    @required this.size,
-    @required this.image,
-  }) : super(key: key);
+  const ImageCard({Key key, @required this.size, @required this.placeDetail})
+      : super(key: key);
 
   final Size size;
-  final String image;
+  final PlaceDetail placeDetail;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +17,15 @@ class ImageCard extends StatelessWidget {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: AssetImage(
-            image,
+            placeDetail.img,
           ),
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            blurRadius: 10,
-            color: Colors.black54,
-            offset: Offset(0, 4),
+            blurRadius: 12,
+            color: Colors.black38,
+            offset: Offset(6, 6),
           ),
         ],
       ),
@@ -54,7 +52,7 @@ class ImageCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Varanasi',
+              placeDetail.placeName,
               style: TextStyle(
                 fontSize: 30,
                 color: Colors.white,
@@ -62,7 +60,7 @@ class ImageCard extends StatelessWidget {
               ),
             ),
             Text(
-              'is a city in the northern Indian state of Uttar Pradesh dating to the 11th century B.C. Regarded as the spiritual capital of India',
+              placeDetail.desc,
               style: TextStyle(
                   color: Colors.white70, fontFamily: 'Poppins', fontSize: 12),
             ),
