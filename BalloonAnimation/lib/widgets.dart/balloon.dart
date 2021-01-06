@@ -15,6 +15,7 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
   Animation<double> opacityAnimation;
 
   double balloonbottomlocation;
+
   @override
   void initState() {
     super.initState();
@@ -29,7 +30,7 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
     super.didChangeDependencies();
     balloonbottomlocation = widget.index == 0
         ? MediaQuery.of(context).size.height / 3
-        : MediaQuery.of(context).size.height / 3 - 30;
+        : MediaQuery.of(context).size.height / 3 - 50;
     opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: controller, curve: Interval(0, 0.5, curve: Curves.easeIn)));
@@ -39,8 +40,7 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
       })
       ..addStatusListener((status) {
         if (controller.status == AnimationStatus.completed) {
-          print('hello');
-          slideAnimation = Tween<double>(begin: 0, end: 50).animate(controller2)
+          slideAnimation = Tween<double>(begin: 0, end: 20).animate(controller2)
             ..addListener(() {
               setState(() {});
             })
@@ -61,6 +61,7 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
   void dispose() {
     super.dispose();
     controller.dispose();
+    controller2.dispose();
   }
 
   @override
@@ -74,15 +75,18 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
       child: Opacity(
         opacity: opacityAnimation.value,
         child: Container(
-          height: 800,
+          height: 700,
           width: 600,
           alignment: Alignment.bottomCenter,
           child: Image.asset(
-            'assets/hot_air_balloon.png',
+            widget.index == 0
+                ? 'assets/balloon.png'
+                : 'assets/balloon_shadow.png',
             color: widget.index == 0 ? null : Colors.black.withOpacity(0.2),
+            // colorBlendMode: BlendMode.,
             height: widget.index == 0
-                ? sizeAnimation.value * 1.75
-                : sizeAnimation.value * 1.25,
+                ? sizeAnimation.value * 1.5
+                : sizeAnimation.value * 1.00,
           ),
         ),
       ),
