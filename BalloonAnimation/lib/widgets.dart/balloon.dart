@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Balloon extends StatefulWidget {
+  final int index;
+  Balloon(this.index);
   @override
   _BalloonState createState() => _BalloonState();
 }
@@ -25,7 +27,9 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    balloonbottomlocation = MediaQuery.of(context).size.height / 3;
+    balloonbottomlocation = widget.index == 0
+        ? MediaQuery.of(context).size.height / 3
+        : MediaQuery.of(context).size.height / 3 - 30;
     opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: controller, curve: Interval(0, 0.5, curve: Curves.easeIn)));
@@ -66,16 +70,20 @@ class _BalloonState extends State<Balloon> with TickerProviderStateMixin {
           ? balloonbottomlocation - slideAnimation.value
           : balloonbottomlocation,
       // left: 100,
+      right: widget.index == 0 ? null : -260,
       child: Opacity(
         opacity: opacityAnimation.value,
         child: Container(
-          // width: sizeAnimation.value,
           height: 800,
           width: 600,
           alignment: Alignment.bottomCenter,
-          // color: Colors.blue,
-          child: Image.asset('assets/hot_air_balloon.png',
-              height: sizeAnimation.value * 1.75),
+          child: Image.asset(
+            'assets/hot_air_balloon.png',
+            color: widget.index == 0 ? null : Colors.black.withOpacity(0.2),
+            height: widget.index == 0
+                ? sizeAnimation.value * 1.75
+                : sizeAnimation.value * 1.25,
+          ),
         ),
       ),
     );

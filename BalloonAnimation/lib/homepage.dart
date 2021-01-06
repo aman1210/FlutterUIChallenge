@@ -13,7 +13,36 @@ class _HomePageState extends State<HomePage> {
         body: Stack(
       overflow: Overflow.visible,
       children: [
-        Balloon(),
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/background.png'),
+                // fit: BoxFit.fitWidth,
+                alignment: Alignment.topCenter),
+          ),
+        ),
+        Balloon(1),
+        Balloon(0),
+        Positioned(
+          bottom: 0,
+          child: Container(
+            height: 300,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.blue,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'SoulEater',
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins'),
+                )
+              ],
+            ),
+          ),
+        ),
       ],
     ));
   }
