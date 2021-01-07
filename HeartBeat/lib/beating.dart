@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class Beating extends StatefulWidget {
+  final double size;
+  final double opacity;
+  Beating(this.size, this.opacity);
   @override
   _BeatingState createState() => _BeatingState();
 }
@@ -8,30 +13,46 @@ class Beating extends StatefulWidget {
 class _BeatingState extends State<Beating> with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
+  int count = 0;
 
   @override
   void initState() {
     super.initState();
     controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 350));
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    animation = Tween<double>(begin: 100, end: 50)
+    animation = Tween<double>(begin: widget.size, end: widget.size - 50)
         .animate(CurvedAnimation(curve: Curves.elasticIn, parent: controller))
           ..addListener(() {
             setState(() {});
           })
-          ..addStatusListener((stauts) {
+          ..addStatusListener((status) {
             if (controller.isCompleted) {
               controller.reverse();
             } else if (controller.isDismissed) {
-              controller.forward();
+              count++;
+              if (count % 2 == 0) {
+                Timer(Duration(milliseconds: 800), () {
+                  controller.forward();
+                });
+              } else {
+                controller.forward();
+              }
             }
           });
-    controller.forward();
+    Timer(
+        Duration(
+            milliseconds: widget.opacity == 0.6
+                ? 400
+                : widget.opacity == 0.4
+                    ? 200
+                    : 0), () {
+      controller.forward();
+    });
   }
 
   @override
@@ -39,7 +60,9 @@ class _BeatingState extends State<Beating> with SingleTickerProviderStateMixin {
     return Container(
       height: animation.value,
       width: animation.value,
-      color: Colors.red,
+      decoration: BoxDecoration(
+          color: Colors.red.withOpacity(widget.opacity),
+          borderRadius: BorderRadius.circular(animation.value)),
     );
   }
 }
