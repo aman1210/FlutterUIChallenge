@@ -9,9 +9,17 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: size.height - 300,
+            height: size.height - 250,
             width: size.width,
-            color: Colors.purple,
+            decoration: BoxDecoration(
+              color: Colors.purple,
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                colorFilter:
+                    ColorFilter.mode(Colors.deepPurple, BlendMode.hardLight),
+                image: AssetImage('assets/meditation.jpg'),
+              ),
+            ),
             child: Stack(
               children: [
                 Positioned(
@@ -54,10 +62,10 @@ class HomePage extends StatelessWidget {
                   child: Beating(350, 0.2),
                 ),
                 Center(
-                  child: Beating(300, 0.4),
+                  child: Beating(250, 0.4),
                 ),
                 Center(
-                  child: Beating(250, 0.6),
+                  child: Beating(150, 0.6),
                 ),
                 Center(
                   child: Icon(
@@ -69,11 +77,9 @@ class HomePage extends StatelessWidget {
                 Positioned(
                   bottom: 10,
                   child: Container(
-                    // color: Colors.green,
                     width: size.width,
                     height: 80,
                     child: Row(
-                      // crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Expanded(
                           child: Row(
@@ -105,7 +111,8 @@ class HomePage extends StatelessWidget {
                                 '84',
                                 style: TextStyle(
                                   fontSize: 60,
-                                  color: Colors.white,
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.pink,
                                 ),
                               ),
                               Padding(
@@ -114,7 +121,7 @@ class HomePage extends StatelessWidget {
                                   'BPM',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    height: 3,
+                                    height: 2.7,
                                     fontSize: 24,
                                   ),
                                 ),
@@ -130,7 +137,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            height: 300,
+            height: 250,
             width: size.width,
             color: Colors.blue,
           ),

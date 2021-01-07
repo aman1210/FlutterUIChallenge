@@ -25,7 +25,7 @@ class _BeatingState extends State<Beating> with SingleTickerProviderStateMixin {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    animation = Tween<double>(begin: widget.size, end: widget.size - 50)
+    animation = Tween<double>(begin: widget.size, end: widget.size - 100)
         .animate(CurvedAnimation(curve: Curves.elasticIn, parent: controller))
           ..addListener(() {
             setState(() {});
@@ -49,7 +49,7 @@ class _BeatingState extends State<Beating> with SingleTickerProviderStateMixin {
             milliseconds: widget.opacity == 0.6
                 ? 400
                 : widget.opacity == 0.4
-                    ? 200
+                    ? 300
                     : 0), () {
       controller.forward();
     });
@@ -61,7 +61,7 @@ class _BeatingState extends State<Beating> with SingleTickerProviderStateMixin {
       height: animation.value,
       width: animation.value,
       decoration: BoxDecoration(
-          color: Colors.red.withOpacity(widget.opacity),
+          color: Colors.pink.withOpacity(widget.opacity),
           borderRadius: BorderRadius.circular(animation.value)),
     );
   }
