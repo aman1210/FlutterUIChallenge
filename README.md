@@ -6,11 +6,28 @@
 
 ## Animations
 
-<img src="BottomRevealClone\demo.gif" height="400px" style="margin-left: 20px">
-<img src="FlipCard/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="3DAppBar/screen.gif" height="400px">&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="400px" src="BalloonAnimation/1.gif">&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="400px" src="HeartBeat/1.gif">&nbsp;&nbsp;&nbsp;&nbsp;
+<table>
+		<tbody>	
+		  <tr align="center">
+			  <td>Bottom Reveal Clone</td>
+			  <td>FlipCard</td>
+			  <td>3d AppBar</td>
+		  </tr>
+		  <tr>
+		  	<td><img src="BottomRevealClone\demo.gif" height="400px"></td>
+			  <td><img src="FlipCard/screen.gif" height="400px"></td>
+        <td><img src="3DAppBar/screen.gif" height="400px"></td>
+		  </tr>
+      <tr align="center">
+			  <td>Hot Air Balloon</td>
+			  <td>HeartBeat</td>
+		  </tr>
+		  <tr>
+		  	<td><img src="BalloonAnimation/1.gif" height="400px"></td>
+			  <td><img src="HeartBeat/1.gif" height="400px"></td>
+		  </tr>
+		</tbody>
+	</table>
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
