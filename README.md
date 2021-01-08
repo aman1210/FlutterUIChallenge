@@ -6,7 +6,7 @@
 
 ## Animations
 
-<img src="BottomRevealClone\demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BottomRevealClone\demo.gif" height="400px" style="margin-left: 20px">
 <img src="FlipCard/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="3DAppBar/screen.gif" height="400px">&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="400px" src="BalloonAnimation/1.gif">&nbsp;&nbsp;&nbsp;&nbsp;
