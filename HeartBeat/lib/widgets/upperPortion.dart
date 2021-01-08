@@ -14,7 +14,7 @@ class UpperPortion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height - 250,
+      height: size.height - 220,
       width: size.width,
       decoration: BoxDecoration(
         color: Colors.purple,
@@ -45,7 +45,7 @@ class UpperPortion extends StatelessWidget {
 
   Center beatingContainer(double size, double opacity) {
     return Center(
-      child: Beating(350, 0.2),
+      child: Beating(size, opacity),
     );
   }
 }
