@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heartBeat_animation/beating.dart';
+import 'package:heartBeat_animation/widgets/beating.dart';
 
 class HomePage extends StatelessWidget {
   @override
