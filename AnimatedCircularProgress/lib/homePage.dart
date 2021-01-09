@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage>
   AnimationController controller;
   Animation<double> animation;
 
+  double val = 60;
   bool pressing = false;
 
   @override
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage>
 
   animate() {
     controller.reset();
-    animation = Tween<double>(begin: 0, end: 60).animate(
+    animation = Tween<double>(begin: 0, end: val).animate(
         CurvedAnimation(curve: Curves.elasticInOut, parent: controller))
       ..addListener(() {
         setState(() {});
@@ -50,6 +51,32 @@ class _HomePageState extends State<HomePage>
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              'Enter value between 0-100',
+              style: TextStyle(fontSize: 24),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 40),
+              width: 100,
+              decoration: BoxDecoration(
+                  border: Border(bottom: BorderSide(color: Colors.black26))),
+              child: Center(
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'val',
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 30)),
+                  onSubmitted: (value) {
+                    setState(() {
+                      val = double.parse(value);
+                    });
+                    animate();
+                  },
+                ),
+              ),
+            ),
             CustomPaint(
               foregroundPainter: CircleProgress(val: animation.value),
               child: Container(
@@ -58,6 +85,7 @@ class _HomePageState extends State<HomePage>
                 child: Center(
                   child: GestureDetector(
                     onTapDown: (details) {
+                      controller.reverse();
                       setState(() {
                         pressing = true;
                       });
@@ -66,8 +94,6 @@ class _HomePageState extends State<HomePage>
                       setState(() {
                         pressing = false;
                       });
-                    },
-                    onTap: () {
                       animate();
                     },
                     child: Container(
@@ -117,20 +143,6 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Flexible(flex: 4, child: Text('Set the value: ')),
-            //     Flexible(
-            //       flex: 1,
-            //       child: TextField(
-            //         keyboardType: TextInputType.number,
-
-            //         decoration: InputDecoration(labelText: '50'),
-            //       ),
-            //     )
-            //   ],
-            // )
           ],
         ),
       ),
