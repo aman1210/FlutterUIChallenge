@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -6,9 +8,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _animation;
+  ScrollController _scrollController;
+  var down = false;
+  var animatingSlide = false;
 
   @override
   void initState() {
@@ -21,78 +26,150 @@ class _LoginScreenState extends State<LoginScreen>
       ..addListener(() {
         setState(() {});
       });
+    _scrollController = ScrollController();
+  }
+
+  slideDown(double height) {
+    _scrollController.animateTo(2500 + height,
+        curve: Curves.easeInCubic, duration: Duration(milliseconds: 500));
+  }
+
+  slideUp() {
+    _scrollController.animateTo(0,
+        curve: Curves.easeInOutCubic, duration: Duration(milliseconds: 500));
   }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                height: 250,
+      body: Container(
+        height: size.height,
+        width: size.width,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          child: Column(
+            children: [
+              Container(
+                height: size.height - 400,
                 width: 340,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  slideDown(
+                    size.height,
+                  );
+                },
+              ),
+              Waves(animation: _animation),
+              Container(
+                padding: const EdgeInsets.all(0),
+                height: 2500,
+                width: size.width,
                 decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black38,
-                    ),
-                    borderRadius: BorderRadius.circular(10)),
+                  color: Colors.deepPurple.withOpacity(0.83),
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.deepPurple,
+                      Colors.deepPurple[700],
+                      Colors.deepPurple[800],
+                      Colors.deepPurple[900],
+                      Colors.deepPurple[900],
+                      Colors.deepPurple[800],
+                      Colors.deepPurple[700],
+                      Colors.deepPurple,
+                    ],
+                    stops: [0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 0.9, 1],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+              ),
+              Transform.rotate(
+                angle: pi,
+                child: Waves(
+                  animation: _animation,
+                ),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  slideUp();
+                },
+              ),
+              Container(
+                height: size.height - 400,
+                width: 340,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Waves extends StatelessWidget {
+  const Waves({
+    Key key,
+    @required Animation<double> animation,
+  })  : _animation = animation,
+        super(key: key);
+
+  final Animation<double> _animation;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(0),
+      margin: const EdgeInsets.all(0),
+      height: 350,
+      child: Stack(
+        clipBehavior: Clip.hardEdge,
+        overflow: Overflow.clip,
+        children: [
+          Positioned(
+            bottom: -10,
+            left: _animation.value - 50,
+            child: ClipPath(
+              clipper: WaveClip(),
+              child: Opacity(
+                opacity: 0.3,
+                child: Container(
+                  width: 1000,
+                  height: 310,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
             ),
           ),
-          Container(
-            height: 350,
-            child: Stack(
-              children: [
-                Positioned(
-                  bottom: 10,
-                  left: _animation.value - 50,
-                  child: ClipPath(
-                    clipper: WaveClip(),
-                    child: Opacity(
-                      opacity: 0.3,
-                      child: Container(
-                        width: 1000,
-                        height: 310,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ),
+          Positioned(
+            bottom: 0,
+            left: _animation.value,
+            child: ClipPath(
+              clipper: WaveClip(),
+              child: Opacity(
+                opacity: 0.5,
+                child: Container(
+                  width: 1000,
+                  height: 300,
+                  color: Theme.of(context).primaryColor,
                 ),
-                Positioned(
-                  bottom: 0,
-                  left: _animation.value,
-                  child: ClipPath(
-                    clipper: WaveClip(),
-                    child: Opacity(
-                      opacity: 0.5,
-                      child: Container(
-                        width: 1000,
-                        height: 300,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: -5,
+            left: _animation.value - 100,
+            child: ClipPath(
+              clipper: WaveClip(),
+              child: Opacity(
+                opacity: 0.5,
+                child: Container(
+                  width: 1000,
+                  height: 300,
+                  color: Theme.of(context).primaryColor,
                 ),
-                Positioned(
-                  bottom: -15,
-                  left: _animation.value - 100,
-                  child: ClipPath(
-                    clipper: WaveClip(),
-                    child: Opacity(
-                      opacity: 0.5,
-                      child: Container(
-                        width: 1000,
-                        height: 300,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
