@@ -126,7 +126,7 @@ class Waves extends StatelessWidget {
         children: [
           Positioned(
             bottom: -10,
-            left: _animation.value - 60,
+            left: _animation.value - 120,
             child: ClipPath(
               clipper: WaveClip(),
               child: Opacity(
@@ -155,8 +155,8 @@ class Waves extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: -25,
-            left: _animation.value - 80,
+            bottom: -15,
+            left: _animation.value - 50,
             child: ClipPath(
               clipper: WaveClip(),
               child: Opacity(
