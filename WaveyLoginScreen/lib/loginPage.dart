@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   slideDown(double height) {
-    _scrollController.animateTo(2500 + height,
+    _scrollController.animateTo(2600 + height,
         curve: Curves.easeInCubic, duration: Duration(milliseconds: 500));
   }
 
@@ -54,7 +54,10 @@ class _LoginScreenState extends State<LoginScreen>
               Container(
                 height: size.height - 320,
                 width: 340,
-                child: LoginForm(),
+                child: LoginForm(
+                  scrollFunction: slideDown,
+                  signup: false,
+                ),
               ),
               Waves(animation: _animation),
               Container(
@@ -86,14 +89,13 @@ class _LoginScreenState extends State<LoginScreen>
                   animation: _animation,
                 ),
               ),
-              RaisedButton(
-                onPressed: () {
-                  slideUp();
-                },
-              ),
               Container(
-                height: size.height - 400,
+                height: size.height - 320,
                 width: 340,
+                child: LoginForm(
+                  scrollFunction: slideUp,
+                  signup: true,
+                ),
               ),
             ],
           ),
@@ -124,7 +126,7 @@ class Waves extends StatelessWidget {
         children: [
           Positioned(
             bottom: -10,
-            left: _animation.value - 50,
+            left: _animation.value - 60,
             child: ClipPath(
               clipper: WaveClip(),
               child: Opacity(
@@ -153,8 +155,8 @@ class Waves extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: -5,
-            left: _animation.value - 100,
+            bottom: -25,
+            left: _animation.value - 80,
             child: ClipPath(
               clipper: WaveClip(),
               child: Opacity(
