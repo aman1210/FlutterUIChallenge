@@ -4,6 +4,10 @@
 
 <img src="Profile\Screenshot\ProfilePage.jpg" height="400px">
 
+## Login Screen UI
+
+<img src="WaveyLoginScreen\1.gif" height="400px">
+
 ## Animations
 
 <table>
