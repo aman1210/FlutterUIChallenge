@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:WaveyLoginScreen/loginForm.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -51,15 +52,9 @@ class _LoginScreenState extends State<LoginScreen>
           child: Column(
             children: [
               Container(
-                height: size.height - 400,
+                height: size.height - 320,
                 width: 340,
-              ),
-              RaisedButton(
-                onPressed: () {
-                  slideDown(
-                    size.height,
-                  );
-                },
+                child: LoginForm(),
               ),
               Waves(animation: _animation),
               Container(
