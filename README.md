@@ -25,12 +25,12 @@
       <tr align="center">
 			  <td>Hot Air Balloon</td>
 			  <td>HeartBeat</td>
-	      <td>3D Rotating Poseter</td>
+	      <td>3D Rotating Poster</td>
 		  </tr>
 		  <tr>
 		  	<td><img src="BalloonAnimation/1.gif" height="400px"></td>
 			  <td><img src="HeartBeat/1.gif" height="400px"></td>
-			  <td><img src="RotatingPoster/screen.git" height="400px"></td>
+			  <td><img src="RotatingPoster/screen.gif" height="400px"></td>
 		  </tr>
 		</tbody>
 	</table>
