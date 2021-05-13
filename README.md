@@ -9,37 +9,13 @@
 <img src="WaveyLoginScreen\1.gif" height="400px">
 
 ## Animations
-
-<table>
-		<tbody>	
-		  <tr align="center">
-			  <td>Bottom Reveal Clone</td>
-			  <td>FlipCard</td>
-			  <td>3d AppBar</td>
-		  </tr>
-		  <tr>
-		  	<td><img src="BottomRevealClone\demo.gif" height="400px"></td>
-			  <td><img src="FlipCard/screen.gif" height="400px"></td>
-        <td><img src="3DAppBar/screen.gif" height="400px"></td>
-		  </tr>
-      <tr align="center">
-			  <td>Hot Air Balloon</td>
-			  <td>HeartBeat</td>
-	      <td>3D Rotating Poster</td>
-		  </tr>
-		  <tr>
-		  	<td><img src="BalloonAnimation/1.gif" height="400px"></td>
-			  <td><img src="HeartBeat/1.gif" height="400px"></td>
-			  <td><img src="RotatingPoster/screen.gif" height="400px"></td>
-		  </tr>
-		  <tr align="center">
-			  <td>Floating Action Menu</td>
-		</tr>
-			<tr>
-				<td><img src="FloatingActionMenu/screenshot/demo.gif" height="400px"></td>
-			</tr>
-		</tbody>
-	</table>
+<img src="BottomRevealClone\demo.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
+<img src="FlipCard/screen.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
+<img src="3DAppBar/screen.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
+<img src="BalloonAnimation/1.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
+<img src="HeartBeat/1.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
+<img src="RotatingPoster/screen.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
+<img src="FloatingActionMenu/screenshot/demo.gif" height="400px">&nbps;&nbps;&nbps;&nbps;
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
