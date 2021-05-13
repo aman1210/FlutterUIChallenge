@@ -32,6 +32,12 @@
 			  <td><img src="HeartBeat/1.gif" height="400px"></td>
 			  <td><img src="RotatingPoster/screen.gif" height="400px"></td>
 		  </tr>
+		  <tr align="center">
+			  <td>Floating Action Menu</td>
+		</tr>
+			<tr>
+				<td><img src="FloatingActionMenu/screenshot/demo.gif" height="400px"></td>
+			</tr>
 		</tbody>
 	</table>
 
