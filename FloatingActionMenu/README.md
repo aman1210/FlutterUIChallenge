@@ -4,4 +4,4 @@ Flutter UI Challenge - 12
 
 ## Demo
 
-![Floating Action Menu](screenshot/demo.gif)
+![Floating Action Button Menu](screenshot/demo.gif)
