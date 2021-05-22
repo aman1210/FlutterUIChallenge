@@ -10,7 +10,7 @@
 
 ## Onboarding Screen
 
-<img height="480px" src="OnboardingScreen/screenshots/6.gif">&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="480px" src="OnboardingScreen\screenshots\demo.gif">&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Animations
 <img src="BottomRevealClone\demo.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
