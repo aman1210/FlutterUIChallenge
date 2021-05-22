@@ -13,13 +13,13 @@
 <img height="480px" src="OnboardingScreen\screenshots\demo.gif">&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Animations
-<img src="BottomRevealClone\demo.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="FlipCard/screen.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="3DAppBar/screen.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="BalloonAnimation/1.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="HeartBeat/1.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="RotatingPoster/screen.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
-<img src="FloatingActionMenu/screenshot/demo.gif" height="400px"> &nbps;&nbps;&nbps;&nbps;
+<img src="BottomRevealClone\demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="FlipCard/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="3DAppBar/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BalloonAnimation/1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="HeartBeat/1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="RotatingPoster/screen.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="FloatingActionMenu/screenshot/demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/ShoesStore'>Shoes Store UI</a>
 
