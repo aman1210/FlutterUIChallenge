@@ -82,21 +82,17 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(size.height),
         ),
       ),
-      duration: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 500),
     );
     var bottomButton = Positioned(
       bottom: 20,
       left: (size.width / 2) - ((size.width * 0.55) / 2),
       child: InkWell(
         onTap: () {
-          if (index < 2) {
-            setState(() {
-              index++;
-            });
-          }
+          print('Start App');
         },
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 1000),
+          duration: Duration(milliseconds: 500),
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
           width: size.width * 0.55,
           decoration: BoxDecoration(
@@ -121,24 +117,40 @@ class _HomePageState extends State<HomePage> {
       ),
     );
     return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            backgroundCircle,
-            ..._list.map((e) {
-              return OnboardingDetail(
-                e: e,
-                index: index,
-                size: size,
-                childIndex: _list.indexOf(e),
-              );
-            }).toList(),
-            PageIndicator(size: size, index: index),
-            bottomButton,
-          ],
+      body: GestureDetector(
+        onHorizontalDragEnd: (details) {
+          var direction = details.primaryVelocity?.sign;
+          if (direction == 1) {
+            if (index > 0) {
+              index--;
+            }
+          } else {
+            if (index < 2) {
+              index++;
+            }
+          }
+          setState(() {});
+        },
+        child: Container(
+          width: size.width,
+          height: size.height,
+          color: Colors.transparent,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              backgroundCircle,
+              ..._list.map((e) {
+                return OnboardingDetail(
+                  e: e,
+                  index: index,
+                  size: size,
+                  childIndex: _list.indexOf(e),
+                );
+              }).toList(),
+              PageIndicator(size: size, index: index),
+              bottomButton,
+            ],
+          ),
         ),
       ),
     );
@@ -166,7 +178,7 @@ class PageIndicator extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AnimatedContainer(
-                duration: Duration(milliseconds: 1000),
+                duration: Duration(milliseconds: 500),
                 height: 15,
                 width: index == 0 ? 40 : 15,
                 decoration: BoxDecoration(
@@ -176,7 +188,7 @@ class PageIndicator extends StatelessWidget {
                 ),
               ),
               AnimatedContainer(
-                duration: Duration(milliseconds: 1000),
+                duration: Duration(milliseconds: 500),
                 height: 15,
                 width: index == 1 ? 40 : 15,
                 decoration: BoxDecoration(
@@ -186,7 +198,7 @@ class PageIndicator extends StatelessWidget {
                 ),
               ),
               AnimatedContainer(
-                duration: Duration(milliseconds: 1000),
+                duration: Duration(milliseconds: 500),
                 height: 15,
                 width: index == 2 ? 40 : 15,
                 decoration: BoxDecoration(
@@ -218,7 +230,7 @@ class OnboardingDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
-      duration: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 500),
       opacity: childIndex == index ? 1 : 0,
       child: Center(
         child: Column(
@@ -240,7 +252,7 @@ class OnboardingDetail extends StatelessWidget {
                         : index == 1
                             ? 0
                             : 80,
-                    duration: Duration(milliseconds: 1000),
+                    duration: Duration(milliseconds: 500),
                     child: Container(
                       width: 120,
                       height: 120,
@@ -253,16 +265,20 @@ class OnboardingDetail extends StatelessWidget {
                           shape: BoxShape.circle),
                     ),
                   ),
-                  Image.asset(e['image']!),
+                  Image.asset(
+                    e['image']!,
+                    fit: BoxFit.cover,
+                  ),
                 ],
               ),
             ),
             SizedBox(
-              height: 0,
+              height: 60,
             ),
             Text(
               e['title']!,
               style: Theme.of(context).textTheme.headline1,
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 40,
@@ -302,7 +318,7 @@ class FadeTitle extends StatelessWidget {
         children: [
           Center(
             child: AnimatedOpacity(
-                duration: Duration(milliseconds: 1000),
+                duration: Duration(milliseconds: 500),
                 opacity: childIndex == index ? 1 : 0,
                 child: widget),
           ),
