@@ -6,7 +6,9 @@
 
 ## Login Screen UI
 
-<img src="WaveyLoginScreen\1.gif" height="400px">
+<img src="WaveyLoginScreen\1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="LoginScreen(Figma)\1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+
 
 ## Onboarding Screen
 

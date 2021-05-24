@@ -1,16 +1,11 @@
-# figma_challenge_day_2
+# Login Screen
 
-A new Flutter project.
+Flutter UI Challenge - 15
 
-## Getting Started
+Inspiration: <a href="https://www.figma.com/community/file/863154187917698952">10 Day Design Challenge</a>
 
-This project is a starting point for a Flutter application.
+## Screenshot
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img height="480px" src="screenshots/demo.gif">&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="480px" src="screenshots/1.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="480px" src="screenshots/2.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
