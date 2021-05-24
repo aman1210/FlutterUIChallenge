@@ -8,7 +8,7 @@
 
 <img src="WaveyLoginScreen\1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="LoginScreen(Figma)\1.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="SignupScreen\screenshots\1.jpg" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="SignupScreen\screenshots\1.jpg" height="400px">
 
 
 ## Onboarding Screen
