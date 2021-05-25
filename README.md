@@ -2,8 +2,8 @@
 
 ## <a href='https://github.com/aman1210/FlutterUIChallenge/tree/main/Profile'>Profile Page UI</a>
 
-<img src="Profile\Screenshot\ProfilePage.jpg" height="400px">
-<img src="ProfileScreen(Figma)\screenshot\1.jpg" height="400px">
+<img src="Profile\Screenshot\ProfilePage.jpg" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="ProfileScreen(Figma)\screenshot\1.jpg" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Login Screen UI
 
