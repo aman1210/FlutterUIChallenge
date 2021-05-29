@@ -12,9 +12,10 @@
 <img src="SignupScreen\screenshots\1.jpg" height="400px">
 
 
-## Onboarding Screen
+## Other
 
 <img height="480px" src="OnboardingScreen\screenshots\demo.gif">&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="480px" src="BlogScreen\screenshot\1.jpg>&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Animations
 <img src="BottomRevealClone\demo.gif" height="400px"> &nbsp;&nbsp;&nbsp;&nbsp;
