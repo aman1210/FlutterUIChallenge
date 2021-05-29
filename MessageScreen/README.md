@@ -1,6 +1,6 @@
-# Blog Screen
+# Message Screen
 
-Flutter UI Challenge - 17
+Flutter UI Challenge - 18
 
 Inspiration: <a href="https://www.figma.com/community/file/863154187917698952">10 Day Design Challenge</a>
 
